@@ -39,6 +39,10 @@ export class View {
 
   //Dom helper methods
 
+  openModal(message) {
+    this.$.modal.classList.remove("hidden");
+  }
+
   #toggleMenu() {
     this.$.menuItems.classList.toggle("hidden");
     this.$.menuBtn.classList.toggle("border");

@@ -178,6 +178,12 @@ function init() {
     const clickedSquare = event.target;
     view.handlePlayerMove(clickedSquare, store.game.currentPlayer);
     store.playerMove(+clickedSquare.id);
+
+    if (store.game.status.isComplete) {
+      view.openModal();
+      return;
+    }
+
     view.setTurnIndicator(store.game.currentPlayer);
   });
 }
